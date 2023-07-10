@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "FTV Remove news titles",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "info@francetv.fr",
+      "strict_min_version": "110.0",
+    "update_url": "https://example.com/updates.json"
+    }
+  },
+  "version": "1.0",
+  "description": "Don’t stress over futile and anxiogenic things.",
+  "icons": {"32": "img/smile.png"},
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.ftvi-dev.ftven.net:+/?.*",
+    "https://www.francetvinfo.fr/?.*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.francetvinfo.fr/*"],
+      "all_frames": true,
+      "js": ["content.js"]
+    }
+  ]
+}
