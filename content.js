@@ -36,16 +36,8 @@ function replaceImagesByCat(document) {
         if (w === undefined || h === undefined) return;
 
         element.srcset = `https://placekitten.com/${w}/${h}?image=${Math.floor(Math.random() * 16) + 1}`;
-        console.log('OK '+ element.srcset);
     });
 }
 
-replaceTitlesAndDescription(document);
 replaceImagesByCat(document);
-
-
-browser.runtime.onMessage.addListener((request) => {
-  console.log("The essage from the background script:");
-  console.log(request.greeting);
-  return Promise.resolve({ response: "Hi from content script" });
-});
+replaceTitlesAndDescription(document);
