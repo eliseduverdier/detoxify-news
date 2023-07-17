@@ -4,7 +4,7 @@ Remove titles and images from a news website, to avoid anxiety when working on t
 ## install
 [firefox](https://addons.mozilla.org/firefox/downloads/file/4138160/924d97da3c024c1c86ae-1.1.xpi)
 /
-[chrome](https://github.com/eliseduverdier/detoxify-news/chrome/cat-news.zip)
+[chrome](https://github.com/eliseduverdier/detoxify-news/blob/main/chrome/cat-news.zip)
 
 ---
 
