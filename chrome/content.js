@@ -12,14 +12,17 @@ function replaceTitlesAndDescription(document) {
         + ' .card-article-xs__title,'
         + ' .card-article-list-xs__title,'
         + ' .most-read__item-title,'
-        + ' .mea-multi-regional__item-title'
+        + ' .mea-multi-regional__item-title,'
+        + ' .headline-event-contents__title,'
+        + ' .c-title'
     ]
     document.querySelectorAll(titlesToReplace).forEach(function (element) {
         element.innerHTML = 'blip blop '.repeat(3);
     });
     const descriptionsToReplace = [
         '.card-article-majeure__chapo,'
-        + ' .card-article-m__chapo'
+        + ' .card-article-m__chapo,'
+        + ' .c-chapo'
     ]
     document.querySelectorAll(descriptionsToReplace).forEach(function (element) {
         element.innerHTML = 'blip blup '.repeat(7);

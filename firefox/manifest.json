@@ -2,9 +2,16 @@
   "manifest_version": 3,
   "name": "FTV Remove news titles",
   "description": "Don’t stress over futile and anxiogenic things.",
-  "version": "1.0",
+  "version": "1.1",
   "icons": {
     "32": "img/smile.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "eliseduverdier@gmail.com",
+      "strict_min_version": "110.0",
+      "update_url": "https://eliseduv.dev/updates.json"
+    }
   },
   "permissions": [
     "activeTab",
