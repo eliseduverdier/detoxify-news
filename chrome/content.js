@@ -38,9 +38,19 @@ function replaceImagesByCat(document) {
         let [w,h] = dimensions[0].replaceAll('/','').split('x')
         if (w === undefined || h === undefined) return;
 
-        element.srcset = `https://placekitten.com/${w}/${h}?image=${Math.floor(Math.random() * 16) + 1}`;
+        element.srcset = `https://eliseduv.dev/cats/?w=${w}&h=${h}`;
     });
 }
 
-replaceImagesByCat(document);
+function replaceImagesByColors(document) {
+    const randomColor = ["366093","5f3b81","924476","a1364d","c4bf33","80b733","37b06c"];
+    const imagesToReplace = ['.img-stamp-wrapper']
+    document.querySelectorAll(imagesToReplace).forEach(function (element) {
+        element.style.opacity = '0';
+        element.parentElement.style.backgroundColor = '#'+randomColor[Math.floor(Math.random()*randomColor.length)];
+    });
+}
+
+// replaceImagesByCat(document);
+replaceImagesByColors(document);
 replaceTitlesAndDescription(document);
