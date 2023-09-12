@@ -44,7 +44,7 @@ function replaceImagesByCat(document) {
 
 function replaceImagesByColors(document) {
     const randomColor = ["366093","5f3b81","924476","a1364d","c4bf33","80b733","37b06c"];
-    const imagesToReplace = ['.img-stamp-wrapper']
+    const imagesToReplace = ['.img-stamp-wrapper', 'figure']
     document.querySelectorAll(imagesToReplace).forEach(function (element) {
         element.style.opacity = '0';
         element.parentElement.style.backgroundColor = '#'+randomColor[Math.floor(Math.random()*randomColor.length)];
