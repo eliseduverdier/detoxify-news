@@ -14,43 +14,45 @@ function replaceTitlesAndDescription(document) {
         + ' .most-read__item-title,'
         + ' .mea-multi-regional__item-title,'
         + ' .headline-event-contents__title,'
+        + ' .card-article-actu-forte__title,'
+        + ' .card-article-most-read__title,'
+        + ' .card-article-list-s__title,'
         + ' .c-title'
     ]
     document.querySelectorAll(titlesToReplace).forEach(function (element) {
-        element.innerHTML = 'blip blop '.repeat(3);
+        element.innerHTML = 'title '.repeat(3);
     });
     const descriptionsToReplace = [
         '.card-article-majeure__chapo,'
         + ' .card-article-m__chapo,'
+        + ' .card-article-actu-forte__chapo,'
         + ' .c-chapo'
     ]
     document.querySelectorAll(descriptionsToReplace).forEach(function (element) {
-        element.innerHTML = 'blip blup '.repeat(7);
+        element.innerHTML = 'chapo '.repeat(10);
     });
 }
 
-function replaceImagesByCat(document) {
-    const imagesToReplace = ['source']
+function replaceImagesByCats(document) {
+    const imagesToReplace = ['.img-stamp-wrapper', 'figure']
+    // todo maybe: fetch dimensions of children <source> ou <img>
+    let r;
     document.querySelectorAll(imagesToReplace).forEach(function (element) {
-        let dimensions = element.srcset.match(/\/(\d+)x(\d+)\//g);
-        if (dimensions === null) return;
-
-        let [w,h] = dimensions[0].replaceAll('/','').split('x')
-        if (w === undefined || h === undefined) return;
-
-        element.srcset = `https://eliseduv.dev/cats/?w=${w}&h=${h}`;
+        element.style.opacity = '0';
+        r = Math.random();
+        element.parentElement.style.background = `center repeat url(\'https://eliseduv.dev/cats/?h=400&w=600&r=${r}\')`;
     });
 }
 
 function replaceImagesByColors(document) {
     const randomColor = ["366093","5f3b81","924476","a1364d","c4bf33","80b733","37b06c"];
-    const imagesToReplace = ['.img-stamp-wrapper']
+    const imagesToReplace = ['.img-stamp-wrapper', 'figure']
     document.querySelectorAll(imagesToReplace).forEach(function (element) {
         element.style.opacity = '0';
         element.parentElement.style.backgroundColor = '#'+randomColor[Math.floor(Math.random()*randomColor.length)];
     });
 }
 
-// replaceImagesByCat(document);
+// replaceImagesByCats(document);
 replaceImagesByColors(document);
 replaceTitlesAndDescription(document);

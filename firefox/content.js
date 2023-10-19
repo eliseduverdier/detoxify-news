@@ -1,6 +1,5 @@
 // This script can access and modify the DOM
 
-console.log('content.js loaded');
 
 function replaceTitlesAndDescription(document) {
     const titlesToReplace = [
@@ -14,6 +13,9 @@ function replaceTitlesAndDescription(document) {
         + ' .most-read__item-title,'
         + ' .mea-multi-regional__item-title,'
         + ' .headline-event-contents__title,'
+        + ' .card-article-actu-forte__title,'
+        + ' .card-article-most-read__title,'
+        + ' .card-article-list-s__title,'
         + ' .c-title'
     ]
     document.querySelectorAll(titlesToReplace).forEach(function (element) {
@@ -22,14 +24,15 @@ function replaceTitlesAndDescription(document) {
     const descriptionsToReplace = [
         '.card-article-majeure__chapo,'
         + ' .card-article-m__chapo,'
+        + ' .card-article-actu-forte__chapo,'
         + ' .c-chapo'
     ]
     document.querySelectorAll(descriptionsToReplace).forEach(function (element) {
-        element.innerHTML = 'blip blup '.repeat(7);
+        element.innerHTML = 'titre '.repeat(7);
     });
 }
 
-function replaceImagesByCat(document) {
+/*function replaceImagesByCat(document) {
     const imagesToReplace = ['source']
     document.querySelectorAll(imagesToReplace).forEach(function (element) {
         let dimensions = element.srcset.match(/\/(\d+)x(\d+)\//g);
@@ -40,7 +43,7 @@ function replaceImagesByCat(document) {
 
         element.srcset = `https://placekitten.com/${w}/${h}?image=${Math.floor(Math.random() * 16) + 1}`;
     });
-}
+}*/
 
 function replaceImagesByColors(document) {
     const randomColor = ["366093","5f3b81","924476","a1364d","c4bf33","80b733","37b06c"];
